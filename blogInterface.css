@@ -1,0 +1,309 @@
+.header {
+    height: 100px;
+    background-color:rgba(0, 89, 255, 0.76);
+    font-family: Didot, serif;
+    color: white;
+    font-size: 0px;
+}
+
+.blog {
+    font-size: x-large;
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.right_header {
+    font-size: 50px;
+    text-align:right;
+    font-family: Didot, serif;
+    margin:0px auto 0px auto;
+    background-color:rgba(0, 89, 255, 0.76);
+}
+
+/*code adapted from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  /*background-color:rgba(0, 89, 255, 0.76);*/
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgba(0, 89, 255, 0.76);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+.dropdown-content a {
+  float: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(182, 181, 181);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*arrow adapted from https://www.w3schools.com/howto/howto_css_arrows.asp*/
+.arrow {
+  border: white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* From GPIO Github repo */
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+		supported by Chrome, Edge, Opera and Firefox */
+}
+
+		
+.keypadContainer {
+   /*background-color: red;*/
+   margin-left: 10px;
+   margin-top: 10px;
+   border: 1px solid black;
+   border-radius: 15px;
+
+   float: left;
+   width: auto;
+   padding: 0 30px;
+   box-sizing: border-box;
+}
+
+
+.GpioContainer {
+   /*background-color: red;*/
+   text-align: center;
+   margin-left: 5px;
+   margin-right: 5px;
+   margin-top: 5px;
+   margin-bottom: 15px;
+
+   padding-bottom: 15px;
+   border: 1px solid black;
+   border-radius: 15px;
+   float: left;
+   width: auto;
+   min-width: 50px;
+   padding: 5px;
+   box-sizing: border-box;
+}
+
+.TextCenter {
+  text-align: center;
+}
+
+
+/******** Switch sliders style ******/	
+        
+	.switch {
+	margin: 10px;
+	padding: 5px;  /* iOS text is not centered unless you set padding */
+		position: relative;
+		display: inline-block;
+		width: 60px;
+		height: 34px;
+	
+	-webkit-tap-highlight-color: transparent; /* for removing the highlight 
+		*This only works with certain web browser but useful for Safari and 
+		* chrome on mobile touch screens*/
+
+	
+	}
+
+	.switch input { 
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: "";
+		height: 26px;
+		width: 26px;
+		left: 4px;
+		bottom: 4px;
+		background-color: white;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	input:checked + .slider {
+		background-color: #2196F3;
+	}
+
+	input:focus + .slider {
+		box-shadow: 0 0 1px #2196F3;
+	}
+
+	input:checked + .slider:before {
+		-webkit-transform: translateX(26px);
+		-ms-transform: translateX(26px);
+		transform: translateX(26px);
+	}
+
+	/* Rounded sliders */
+	.slider.round {
+		border-radius: 34px;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
+	}	
+	
+/******** Button style ******/	
+button { 
+
+/*max-width: 20%; */
+min-width: 60px;
+width: auto;
+height: 50px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 18px;
+color: black;
+background-color: #eeeeeeee;
+margin: 10px;
+border-radius: 15px;
+box-shadow: inset 2px 2px 10px 2px #999999;
+text-shadow: 1px 1px 0px grey;
+text-align: center;
+padding: 5px;  /* iOS text is not centered unless you set padding to zero */
+
+
+/* display: inline-block; */
+border: 1px solid black;
+cursor: pointer; /*changes cursor to hand symbol when you hoover*/
+
+-webkit-tap-highlight-color: transparent; /* for removing the highlight 
+		*This only works with certain web browser but useful for Safari and 
+		* chrome on mobile touch screens*/
+	
+} 
+
+/*
+button:hover {
+	color: red;
+	background-color: #ffffff;
+}
+*/   
+button:active {
+	color: red;
+	background-color: #ffffff;
+	border-radius: 15px;
+	box-shadow: inset 2px 2px 10px 2px #999999;
+	text-shadow: 1px 1px 0px grey;
+	border: 1px solid red;
+}
+
+/* The following prevents chrome from putting a box around the button
+ * after selecting it 
+ */
+button:focus {
+    outline: 0;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active {
+  background-color: #fff;
+  color: red;
+}
+
+
+.rectangle {
+  height: 250px;
+  width: 250px;
+  background-color: rgb(247, 247, 247);
+  border: 4px solid #000000;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+
+
