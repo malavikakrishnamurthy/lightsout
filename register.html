@@ -1,0 +1,38 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block right_link %}
+    <a class="right_header" id="id_login_link" href="{% url 'login' %}" style="font-size: 36px;">
+        Back to Login Page
+    </a>
+{% endblock %}
+
+{% block title_on_page %}
+    <span id="id_name_of_page" style="font-size: 40px; font-family: Didot, serif;"></span>
+{% endblock %}
+
+{% block content %}
+    <div style="font-weight: bold; color:rgba(0, 89, 255, 0.76); font-size: 130px; font-family: Didot, serif;padding-top: 100px;padding-left: 20px;">lights out</div>
+    <div style="font-size: 40px; color:rgba(0, 89, 255, 0.76); font-family: Didot, serif;padding-left: 600px;position: relative; bottom: 130px;" >&copy;</div>
+    <div style="font-style: italic; font-size: 40px; color:rgba(0, 89, 255, 0.76); font-family: Didot, serif;padding-left: 20px;">Control the light in your life.</div>
+    <hr>
+    <form method="post" action="{% url 'register' %}" style="position: relative; bottom: 330px; padding-left: 730px;">
+        <table>
+            {% for field in form.visible_fields %}
+                <tr>
+                    <td>{{field.label_tag}}</td>
+                    <td>{{field}}</td>
+                    <td class="errorlist">
+                        {% for error in field.errors %} {{error}} {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% csrf_token %}
+        <button type="submit" id="id_register_button">Register</button>
+    </form>
+    {% for error in form.non_field_errors %}
+        <p class="errorlist">
+            {{ error }}
+        </p>
+    {% endfor %}
+{% endblock %}

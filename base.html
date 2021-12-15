@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="../../static/socialnetwork/blogInterface.css?version=5">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Lights Out</title>
+    </head>
+    <body>
+        {% load static %}
+        <script>
+            var nav_bar_shows = false
+            function setNavButton() {
+                nav_bar_shows = !nav_bar_shows;
+                // if (nav_bar_shows) {
+                //
+                // }
+                // document.getElementById("demo").innerHTML = "Hello World";
+            }
+        </script>
+        <div class="header">
+            <span class="blog" id="id_name_of_site" style="font-size: 70px;">
+                lights out &copy;
+            </span>
+            <div class="navbar right_header" style="float: right">
+                <div class="dropdown" onclick="setNavButton()">
+                    {% block right_link %}{% endblock %}
+                </div>
+            </div>
+            <br><br>
+        </div>
+        <div>
+        </div>
+        <div class="title_on_page">
+            {% block title_on_page %}
+            <span id="id_name_of_page">
+                Login
+            </span>
+            {% endblock %}
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+
+    <!-- import jquery library -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <!-- import paho MQTT library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+
+    <!-- our javascript -->
+    
+    <script type="text/javascript" src="{% static 'socialnetwork/app.js' %}"></script>
+
+    </body>
+</html>
